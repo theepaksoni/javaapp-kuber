@@ -2,8 +2,6 @@ pipeline {
     
     agent any
     
-    
-    
     tools {
         maven "MVN3"
         dockerTool "docker"
@@ -25,7 +23,7 @@ pipeline {
         stage('build docker image') {
             steps {
                 script {
-                    dockerImage = docker.build("theepaksoni/javaapp-k8s","kubernetes-java")
+                    dockerImage = docker.build("theepaksoni/javaapp-kubernetes","kubernetes-java")
                 }
             }
         }
