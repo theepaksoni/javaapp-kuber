@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('pullscm') {
             steps {
-                git credentialsId: 'github', url: 'git@github.com:sathishbob/javaapp-kuber.git'
+                git credentialsId: 'github', url: 'git@github.com:theepaksoni/javaapp-kuber.git'
             }
         }
         
@@ -25,7 +25,7 @@ pipeline {
         stage('build docker image') {
             steps {
                 script {
-                    dockerImage = docker.build("sathishbob/javaapp-k8s","kubernetes-java")
+                    dockerImage = docker.build("theepaksoni/javaapp-k8s","kubernetes-java")
                 }
             }
         }
